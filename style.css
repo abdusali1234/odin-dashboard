@@ -22,3 +22,25 @@ body {
     grid-row: 1 / 2;
     background-color: greenyellow;
 }
+
+.board-body {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.quests {
+    grid-column: 1 / 1;
+    grid-row: 1 / 3;
+    background-color: aquamarine;
+}
+
+.announcements {
+    grid-column: 2 / 2;
+    grid-row: 1 / 2;
+    background-color: chocolate;
+}
+
+.guild {
+    background-color: cornflowerblue;
+}
