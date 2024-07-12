@@ -1,4 +1,6 @@
-
+:root {
+    --light-grey: rgb(228, 228, 228);
+}
 
 
 body {
@@ -60,30 +62,137 @@ body {
 }
 
 
-.header {
+header {
     grid-column: 2 / 2;
     grid-row: 1 / 2;
-    background-color: greenyellow;
+    display: flex;
+    flex-flow: column nowrap;
 }
+
+.head-upper {
+    display: flex;
+    gap: 2vh;
+}
+
+.search-container {
+    flex: 1;
+    display: flex;
+    padding: 2vh;
+    gap: 1vh;
+    align-items: center;
+
+}
+
+.searchbar {
+    height: 4vh;
+    flex: 1;
+    min-width: 1vh;
+    max-width: 50vh;
+    font-size: 1vh;
+    padding-left: 2vh;
+    border-radius: 25vh;
+    border: none;
+    background-color: var(--light-grey);
+}
+
+
+.head-icon {
+    width: min(3vh, 3vw);
+}
+
+.profile-icons {
+    
+    padding: min(2vh, 2vw);
+    gap: min(2vh, 2vw);
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+    flex: 1;
+}
+
+.profile-icon-mini {
+    width: min(4vh, 4vw);
+    border-radius: 3vh;
+    background-color: aquamarine;
+}
+
+.profile-name-mini {
+    font-size: min(2vh, 2vw);
+    font-weight: bold;
+    align-self: center;
+}
+
+.head-lower {
+    display: flex;
+    padding: 2vh;
+}
+
+.greeting-container {
+    display: flex;
+    align-items: center;
+    gap: min(2vh, 2vw);
+}
+
+.profile-icon-normal {
+    width: min(8vh, 10vw);
+    border-radius: 5vh;
+    background-color: aquamarine;
+}
+
+.greeting-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: min(1vh, 1vw);
+    font-weight: bold;
+    padding-left: 2vh;
+}
+
+.greet {
+    font-size: min(1.6vh, 3vw);
+    padding: 0;
+    margin: 0;
+}
+
+.profile-name-normal {
+    font-size: min(2.5vh, 3vw);
+    padding: 0;
+    margin: 0;
+}
+
+.buttons-container {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+    gap: min(2vh, 2vw)
+}
+
+.header-button {
+    font-size: min(2vh, 3vw);
+    padding: min(1vh,2vw) min(2vh,3vw);
+    background-color: var(--light-grey);
+    border-radius: 5vh;
+    border-style: solid;
+    border-color: black;
+}
+
 
 .board-body {
     display: grid;
     grid-template-columns: 4fr 1fr;
     grid-template-rows: 1fr 1fr;
+    background-color: grey;
 }
 
 .quests {
     grid-column: 1 / 1;
     grid-row: 1 / 3;
-    background-color: aquamarine;
 }
 
 .announcements {
     grid-column: 2 / 2;
     grid-row: 1 / 2;
-    background-color: chocolate;
 }
 
 .guild {
-    background-color: cornflowerblue;
 }
