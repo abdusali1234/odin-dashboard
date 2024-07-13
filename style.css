@@ -1,8 +1,13 @@
 :root {
     --light-grey: rgb(228, 228, 228);
+    --text-colour: rgb(94, 94, 94);
 }
 
-
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 body {
     margin: 0;
     padding: 0;
@@ -40,9 +45,17 @@ body {
     font-size: min(3.5vh,5vw);
 }
 
-.menu {
+.menu-top {
     display: flex;
     flex-direction: column;
+    padding: min(2vh, 2vw);
+    gap: min(2vh, 2vw);
+}
+
+.menu-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     padding: min(2vh, 2vw);
     gap: min(2vh, 2vw);
 }
@@ -67,6 +80,7 @@ header {
     grid-row: 1 / 2;
     display: flex;
     flex-flow: column nowrap;
+    
 }
 
 .head-upper {
@@ -177,22 +191,113 @@ header {
 }
 
 
-.board-body {
+main {
     display: grid;
-    grid-template-columns: 4fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    background-color: grey;
+    grid-template-columns: 3fr 1fr;
+    background-color: var(--light-grey);
 }
 
 .quests {
     grid-column: 1 / 1;
-    grid-row: 1 / 3;
 }
 
-.announcements {
+.other {
     grid-column: 2 / 2;
-    grid-row: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    padding: 2vh;
+    row-gap: 1vh;
 }
 
-.guild {
+.main-header-text {
+    font-weight: bold;
+    font-size: 2.2vh;
+}
+
+.announcements-container{
+    display: grid;
+    background-color: white;
+    grid-template-rows: repeat(3, 1fr);
+    padding: 2vh;
+    border-radius: 1.5vh;
+    justify-content: center;
+
+}
+
+.announcements-container .announcement:first-child {
+    border: none;
+}
+
+.announcement {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 1vh;
+    border-top: 1px solid black;
+}
+
+.announcement-header {
+    font-size: 1.8vh;
+    font-weight: bold;
+    flex: 1;
+}
+
+.announcement-text {
+    font-size: 1.3vh;
+    color: var(--text-colour);
+    flex: 1;
+}
+
+.guild-container {
+    display: grid;
+    background-color: white;
+    grid-template-rows: repeat(4, 1fr) 0.25fr;
+    padding: 2vh;
+    border-radius: 1.5vh;
+    justify-content: center;
+    gap: 2vh;
+}
+
+.member-container {
+    display: flex;
+    flex: 1;
+    gap: 2vh;
+    justify-content: flex-start;
+}
+.member-icon {
+    width: min(6vh, 10vw);
+    background-color: aquamarine;
+    border-radius: 5vh;
+}
+
+.member-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.member-tag {
+    font-size: 1.8vh;
+}
+
+.member-name {
+    font-size: 1.8vh;
+    color: var(--text-colour);
+}
+
+.link-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.link-container a:link {
+    margin-right: 1%;
+    color: var(--text-colour);
+    font-size: 1.5vh;
+}
+
+.link-container a:visited {
+    color: rgb(69, 69, 69);
 }
