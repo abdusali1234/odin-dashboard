@@ -5,6 +5,7 @@
     --spine-colour: rgb(149, 69, 53);
     --card-shadow: 5px 5px 0 var(--shadow-colour);
     --card-spine: 1.5vh solid var(--spine-colour);
+    --bronze: rgb(205, 127, 50);
 }
 
 @font-face {
@@ -38,7 +39,7 @@ body {
 .sidebar {
     grid-column: 1 / 1;
     grid-row: 1 / 3;
-    background-color: rgb(205, 127, 50);
+    background-color: var(--bronze);
     padding: min(2vh,2vw);
     display: grid;
     grid-template-rows: 1fr 2fr 2fr;
@@ -207,8 +208,9 @@ body {
     padding: min(1vh,2vw) min(2vh,3vw);
     background-color: var(--light-grey);
     border-radius: 5vh;
-    border-style: solid;
-    border-color: black;
+    width: 15vh;
+    border-style: none;
+    background-color: var(--bronze);
 }
 
 
