@@ -1,6 +1,10 @@
 :root {
     --light-grey: rgb(228, 228, 228);
     --text-colour: rgb(94, 94, 94);
+    --shadow-colour: rgba(0, 0, 0, 0.15);
+    --spine-colour: rgb(253, 218, 13);
+    --card-shadow: 5px 5px 0 var(--shadow-colour);
+    --card-spine: 1.5vh solid var(--spine-colour);
 }
 
 * {
@@ -8,6 +12,8 @@
     padding: 0;
     margin: 0;
 }
+
+
 body {
     margin: 0;
     padding: 0;
@@ -75,11 +81,14 @@ body {
 }
 
 
-header {
+.header {
     grid-column: 2 / 2;
     grid-row: 1 / 2;
     display: flex;
-    flex-flow: column nowrap;
+    flex-direction: column;
+    box-shadow: 0px 10px 5px 0px rgba(0,0,0,1);
+    padding: 2vh;
+    gap: 2vh; 
     
 }
 
@@ -199,6 +208,59 @@ main {
 
 .quests {
     grid-column: 1 / 1;
+    padding: 2vh;
+}
+
+.quests-container {
+    padding: 2vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    column-gap: 2vh;
+    row-gap: 2vh;
+    
+}
+
+.quest {
+    display: flex;
+    flex-direction: column;
+    border-left: var(--card-spine);
+    box-shadow: var(--card-shadow);
+    background-color: white;
+    border-radius: 1.5vh;
+    gap: min(1vh, 1vw);
+    padding: 2vh;
+    height: 40vh;
+    overflow: auto;
+}
+
+.quest-header {
+    font-weight: bold;
+    font-size: 1.5vh;
+}
+
+.quest-text {
+    font-size: 1.25vh;
+    color: var(--text-colour);
+}
+
+.rewards {
+    font-size: 1.5vh;
+    color: var(--text-colour);
+}
+
+.rewards ul {
+    padding-left: 1vh;
+}
+
+.quest-icons {
+    margin-top: auto;
+    display: flex;
+    align-self: flex-end;
+    gap: min(2vh, 2vw);
+}
+
+.quest-icon {
+    width: 2vh;
 }
 
 .other {
@@ -221,6 +283,7 @@ main {
     padding: 2vh;
     border-radius: 1.5vh;
     justify-content: center;
+    box-shadow: var(--card-shadow);
 
 }
 
@@ -239,13 +302,13 @@ main {
 }
 
 .announcement-header {
-    font-size: 1.8vh;
+    font-size: 1.5vh;
     font-weight: bold;
     flex: 1;
 }
 
 .announcement-text {
-    font-size: 1.3vh;
+    font-size: 1.25vh;
     color: var(--text-colour);
     flex: 1;
 }
@@ -258,6 +321,7 @@ main {
     border-radius: 1.5vh;
     justify-content: center;
     gap: 2vh;
+    box-shadow: var(--card-shadow);
 }
 
 .member-container {
@@ -289,11 +353,10 @@ main {
 
 .link-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 .link-container a:link {
-    margin-right: 1%;
     color: var(--text-colour);
     font-size: 1.5vh;
 }
